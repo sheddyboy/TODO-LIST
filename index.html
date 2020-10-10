@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../FontawesomeWeb/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                <div class="card mt-3 shadow-sm">
+                    <div class="card-header ">
+                        <p class="display-3 text-center">TO-DO LIST</p>
+                    </div>
+                    <div class="card-body overflow-auto" style="height: 65vh;">
+                        <form action="#!">
+                            <div id="input-container" class="row shadow-sm">
+                                <div id="add-input" class="col">
+                                    <div class="from-group mt-2">
+                                        <input class="form-control" type="text">
+                                        <div class="invalid-feedback">
+                                            Task already exists in a List
+                                        </div>
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <button type="submit" id="add-task" href="#!" class="btn btn-outline-success px-4 mx-auto">Add</button>
+                                    </div>
+                                </div>
+                                <div id="search-input" class="col d-none">
+                                    <div class="from-group my-2">
+                                        <input class="form-control" placeholder="Search" type="text">
+                                        <div class="invalid-feedback">
+                                            Task already exists in Trash or Task List 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- No Task -->
+                        <div class="no-task row justify-content-center" style="height: 40vh;">
+                            <p class="display-4 text-muted align-self-center">There is no task.</p>
+                        </div>
+
+                        <!-- Tasks List -->
+                        <div id="task-list" class="task-list d-none overflow-hidden">
+                            <ul class="list-group mt-2">
+                                <!-- <li class="list-group-item mb-2">
+                                    <p class="mb-1">Go to school</p>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-edit text-muted"></i></a></span>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-trash-alt text-muted"></i></a></span>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-check-square text-muted"></i></a></span>
+                                </li> -->
+                            </ul>
+                        </div>
+
+                        <!-- Completed List -->
+                        <div id="completed-list" class="completed-list d-none overflow-hidden">
+                            <ul class="list-group mt-2">
+                                <!-- <li class="list-group-item mb-2">
+                                    <p class="mb-1">Go to school</p>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-edit text-muted"></i></a></span>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-trash-alt text-muted"></i></a></span>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-check-square text-muted"></i></a></span>
+                                </li> -->
+                            </ul>
+                        </div>
+
+                        <!-- Trash List -->
+                        <div id="trash-list" class="trash-list d-none overflow-hidden">
+                            <ul class="list-group mt-2">
+                                <!-- <li class="list-group-item mb-2">
+                                    <p class="mb-1">Go to school</p>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-edit text-muted"></i></a></span>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-trash-alt text-muted"></i></a></span>
+                                    <span class="mr-3"><a href="#!"><i class="far fa-check-square text-muted"></i></a></span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row nav nav-pills">
+                            <div class="col text-center nav-item"><a id="task-tab" href="#!" class="nav-link active">Task</a></div>
+                            <div class="col text-center nav-item"><a id="completed-tab" class="nav-link" href="#!">Completed</a></div>
+                            <div class="col text-center nav-item"><a id="trash-tab" class="nav-link" href="#!">Trash</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="edit-modal">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+          <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <p class="text-center text-muted">Edit Task</p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-edit text-muted"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control">
+                                <div class="invalid-feedback">
+                                    Task already exists in a list
+                                </div>
+                            </div>
+                        </div>
+                      <button type="submit" class="d-flex mx-auto btn btn-info">Update</button>
+                      </div>
+                      
+                    </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    
+    <!-- Scripts -->
+    <script src="Bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="AnimeJS/anime.min.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
